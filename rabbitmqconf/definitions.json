@@ -1,0 +1,40 @@
+{
+    "rabbit_version": "3.7.0",
+    "users": [
+     {
+      "name": "asyncrunner",
+      "password_hash": "kI3GCgNAab9pnZeCYS/vOYmoRGddV/btqOarkML1JaSfeX7A",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+     }
+    ],
+    "vhosts": [
+     {
+      "name": "\/runnertasks"
+     }
+    ],
+    "permissions": [
+     {
+      "user": "asyncrunner",
+      "vhost": "\/runnertasks",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+     }
+    ],
+    "parameters": [],
+    "policies": [],
+    "queues": [],
+    "exchanges": [
+        {
+          "name": "AsyncTasks",
+          "vhost": "\/runnertasks",
+          "type": "direct",
+          "durable": true,
+          "auto_delete": false,
+          "internal": false,
+          "arguments": {}
+        }
+      ],
+    "bindings": []
+   }
