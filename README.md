@@ -24,3 +24,6 @@ Output from worker receiving the task:
 ![Output from worker receiving the task](https://github.com/Cameleopardus/dotnet_api_async_runner/blob/master/.readme_images/worker_output.png?raw=true)
 Fetching task status from API:
 ![Fetching task status from API](https://github.com/Cameleopardus/dotnet_api_async_runner/blob/master/.readme_images/check_task_status.png?raw=true)
+## Disclaimer & Licensing
+Nothing in this repository is intented to be used in a production environment, none of it is intented to be used as a basis for  any type of best practices.
+You may use the code for whatever you want.
