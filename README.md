@@ -8,3 +8,19 @@ The API then puts the task by its name and the parameters needed for execution i
 Using the competing worker pattern, the worker instances of the application will receive messages from the queue and execute them as they are available. 
 As the workers perform their task, they can update their tasks status by its id using the WorkerTaskStatus class.
 Using the task id, the API can query redis for the tasks updated status to display to the end user.
+
+
+## Getting started
+First things first, you'll need a RabbitMQ and Redis set up for the app to talk to. There is a docker compose configuration in the repository that will set up RMQ + Management and Redis. The default rabbitmq management ui port is 15672, and the username and password will be `asyncrunner` and `localdev`.
+
+First start the app locally with dotnet run to set up the API instance.
+In another terminal set the environment variable `APP_ENV` to "worker", and run the application.
+
+You should now be able to POST to `localhost:5001/api/tasks/` to create a new task, provided you format your request correctly. Examples on creating new tasks and checking their status exist in the provided Postman collection.
+
+Creating new task via POST to API:
+![Creating a new task via POST](https://github.com/Cameleopardus/dotnet_api_async_runner/blob/master/.readme_images/count_by_seconds.png?raw=true)
+Output from worker receiving the task:
+![Output from worker receiving the task](https://github.com/Cameleopardus/dotnet_api_async_runner/blob/master/.readme_images/worker_output.png?raw=true)
+Fetching task status from API:
+![Fetching task status from API](https://github.com/Cameleopardus/dotnet_api_async_runner/blob/master/.readme_images/check_task_status.png?raw=true)
