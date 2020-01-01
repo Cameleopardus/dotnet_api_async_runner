@@ -11,7 +11,6 @@ Using the task id, the API can query redis for the tasks updated status to displ
 
 ## Why not just use Worker Services?
 Because it's better if you only have to write your code once.
-Also this works on older versions of the .NET Framework, worker services are 3.0.
 
 ## Getting started
 First things first, you'll need a RabbitMQ and Redis set up for the app to talk to. There is a docker compose configuration in the repository that will set up RMQ + Management and Redis. The default rabbitmq management ui port is 15672, and the username and password will be `asyncrunner` and `localdev`.
