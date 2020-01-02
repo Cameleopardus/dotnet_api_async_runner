@@ -1,5 +1,7 @@
 # AsyncRunner
 ![enter image description here](https://github.com/Cameleopardus/dotnet_api_async_runner/blob/master/.readme_images/AsynRunner.png?raw=true)
+
+
 This project is an implementation of horizontal scalability in a restful API built with .NET Core MVC.
 By default an instance will start in API mode unless an environment variable `APP_ENV` is set to `"worker"`.
 When the api performs async work a DistributedTask object is created with a unique `task_id` and a default status of `"Queued"`, the task is then serialized and stored in redis by its `task_id`, and the id is returned the user via http(s) response.
